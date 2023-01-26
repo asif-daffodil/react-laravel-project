@@ -14,7 +14,15 @@ import MenuItem from '@mui/material/MenuItem';
 import AdbIcon from '@mui/icons-material/Adb';
 import { NavLink } from 'react-router-dom';
 
-const pages = ['About', 'Gallery', 'Contact'];
+const pages = [
+  'Home',
+  'Pages',
+  'About',
+  'Visa',
+  'Our Services',
+  'Blog',
+  'Contact',
+];
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 
 function ResponsiveAppBar() {
@@ -37,7 +45,7 @@ function ResponsiveAppBar() {
   };
 
   return (
-    <AppBar position="static" color='primary'>
+    <AppBar position="static" color="primary">
       <Container maxWidth="xl">
         <Toolbar disableGutters>
           <AdbIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} />
@@ -91,7 +99,9 @@ function ResponsiveAppBar() {
               {pages.map((page) => (
                 <MenuItem key={page} onClick={handleCloseNavMenu}>
                   <NavLink to={page}>
-                    <Typography textAlign="center" fontWeight="bold">{page}</Typography>
+                    <Typography textAlign="center" fontWeight="bold">
+                      {page}
+                    </Typography>
                   </NavLink>
                 </MenuItem>
               ))}
@@ -116,16 +126,34 @@ function ResponsiveAppBar() {
           >
             LOGO
           </Typography>
-          <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' }, justifyContent : 'end' }}>
+          <Box
+            sx={{
+              flexGrow: 1,
+              display: { xs: 'none', md: 'flex' },
+              justifyContent: 'end',
+            }}
+          >
             {pages.map((page) => (
-              <NavLink to={page} key={page} style={({ isActive }) =>
-              isActive ? {textDecoration: 'none', fontWeight: 'bolder'} : {textDecoration: 'none'} } >
+              <NavLink
+                to={page}
+                key={page}
+                style={({ isActive }) =>
+                  isActive
+                    ? { textDecoration: 'none', fontWeight: 'bolder' }
+                    : { textDecoration: 'none' }
+                }
+              >
                 <Button
                   onClick={handleCloseNavMenu}
-                  sx={{ my: 2, color: 'white', display: 'block', fontWeight: 'inherit' }}
+                  sx={{
+                    my: 2,
+                    color: 'white',
+                    display: 'block',
+                    fontWeight: 'inherit',
+                  }}
                   underline="none"
                 >
-                      {page}
+                  {page}
                 </Button>
               </NavLink>
             ))}

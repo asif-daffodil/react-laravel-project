@@ -1,17 +1,16 @@
-import logo from './logo.svg';
 import './App.css';
 import { Route, Routes } from 'react-router-dom';
 import Home from './Pages/Home';
-import ResponsiveAppBar from './Components/ResponsiveAppBar';
 import About from './Pages/About';
+import MegaMenu from './Components/MegaMenu';
 
 function App() {
   return (
-    <div className="App">
-      <ResponsiveAppBar />
+    <div>
+      <MegaMenu />
       <Routes>
-        <Route path='/' element={<Home />}></Route>
-        <Route path='/about' element={<About />}></Route>
+        <Route path="/" element={<Home />}></Route>
+        <Route path="/about" element={<About />}></Route>
       </Routes>
     </div>
   );
